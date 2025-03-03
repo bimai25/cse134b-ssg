@@ -7,4 +7,4 @@ image: "src/images/zion.jpg"
 ---
 
 The Angels Landing hike is a bucket-list adventure with steep switchbacks and a famous chain-assisted climb.
-The breathtaking views of Zion Canyon make it well worth the effort.
+The breathtaking views of Zion Canyon make it well worth the effort. Super fun hike!

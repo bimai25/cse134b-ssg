@@ -1,0 +1,26 @@
+---
+const { title, location, description, image, slug } = Astro.props;
+---
+
+<article class="hike-card">
+  <a href={slug}>
+    <img src={image} alt={title} />
+    <div class="hike-card-content">
+      <h2>{title}</h2>
+      <p><strong>{location}</strong></p>
+      <p>{description}</p>
+    </div>
+  </a>
+  <hr/>
+</article>
+
+<style>
+    .hike-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+</style>

@@ -1,11 +1,25 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import HikeCard from "../components/HikeCard.astro";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+// Fetch all hikes from the Markdown collection
+const hikes = await Astro.glob('../content/hikes/*.md');
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<BaseLayout title="Hiking Adventures">
+  <h1>Explore the Best Hikes</h1>
+  <p>Discover amazing hiking trails across the country.</p>
+  <hr/>
+
+  <section class="hike-grid">
+    {hikes.map((hike) => (
+      <HikeCard
+        title={hike.frontmatter.title}
+        location={hike.frontmatter.location}
+        description={hike.frontmatter.description}
+        image={hike.frontmatter.image}
+        slug={hike.url}
+      />
+    ))}
+  </section>
+</BaseLayout>
